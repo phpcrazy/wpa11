@@ -32,8 +32,10 @@ class Female{
 		echo "Female Inheritance";
 	}
 }
-class Human extends Male, Female{
-
+class Human extends Male{
+	public function __construct() {
+		
+	}
 }
 $human=new Human;
 $animal = new Animal('Dog');
