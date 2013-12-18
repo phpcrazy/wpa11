@@ -1,0 +1,13 @@
+{
+	"require": {
+    	"symfony/http-foundation": "2.4.*@dev"
+    },
+    "autoload": {
+        "classmap": [
+            "src/Loaders"
+        ],
+        "files": [
+            "src/helpers/helpers.php"
+        ]
+    }
+}
