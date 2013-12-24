@@ -7,5 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Config' => $baseDir . '/src/Loaders/ConfigLoader.php',
+    'HTML' => $baseDir . '/src/Loaders/htmlLoader.php',
+    'Model' => $baseDir . '/src/Loaders/ModelLoader.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
 );

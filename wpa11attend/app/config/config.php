@@ -2,6 +2,7 @@
 
 return array(
 	'site_title'	=> 'Myanmar Tutorials',
+	'base_url'		=> 'http://wpa11.local/',
 	'goo'	=> array(
 		'boo' => 'Hey, we got it!',
 		),
