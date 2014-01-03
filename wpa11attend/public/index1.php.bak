@@ -1,0 +1,53 @@
+<?php 
+define('DD', __DIR__ . '/../');
+define('CONFIG_RD', DD . "/app/config/");
+
+require DD . '/vendor/autoload.php';
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+$request = Request::createFromGlobals();
+$pathinfo = $request->getPathInfo(); // real request
+$rule = '/blog/category/id'; // rule 
+$rule = '/blog/category'; // rule
+
+Route::get($pathinfo, $rule, function($category, $id){
+	echo "You are now calling to " . $category . ' and id is ' . $id;
+});
+
+class Route {
+	public static function get($pathinfo, $rule, $closure) {
+		$route = static::routeRuleResolver($pathinfo, $rule);
+		$closure($route['category'], $route['id']);
+	}
+	private static function routeRuleResolver($pathinfo, $rule) {
+		$pathinfo = explode('/', $pathinfo);
+		$rule = explode('/', $rule);
+		$route = array_combine($rule, $pathinfo);
+		return $route;		
+	}
+}
+
+// $pathinfo = explode('/', $pathinfo);
+/* 
+uri_rules
+=========
+/ 			- home
+/blog 		- blog page
+/blog/1 	- blog and id call
+/contact-us	- contact us
+the rest 	- 404
+*/
+
+
+/*
+if($pathinfo[1] == '') {
+	$data['members'] = Model::member('all');
+	View::make('home', $data);	
+} else if($pathinfo[1] == 'blog') {
+	$data['test']	= 'Hell World';
+	View::make('blog', $data);
+ else {
+	View::notFound();
+} */
+?>

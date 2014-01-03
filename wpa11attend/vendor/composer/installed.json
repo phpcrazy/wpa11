@@ -1,5 +1,73 @@
 [
     {
+        "name": "symfony/routing",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "Symfony/Component/Routing",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Routing.git",
+            "reference": "9da8b5ef05380aee082c4d794750f9ff4bdb7d4b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Routing/zipball/9da8b5ef05380aee082c4d794750f9ff4bdb7d4b",
+            "reference": "9da8b5ef05380aee082c4d794750f9ff4bdb7d4b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "doctrine/annotations": "~1.0",
+            "psr/log": "~1.0",
+            "symfony/config": "~2.2",
+            "symfony/expression-language": "~2.4",
+            "symfony/yaml": "~2.0"
+        },
+        "suggest": {
+            "doctrine/annotations": "For using the annotation loader",
+            "symfony/config": "For using the all-in-one router or any loader",
+            "symfony/expression-language": "For using expression matching",
+            "symfony/yaml": "For using the YAML loader"
+        },
+        "time": "2014-01-01 09:16:05",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.5-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Routing\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Routing Component",
+        "homepage": "http://symfony.com",
+        "keywords": [
+            "router",
+            "routing",
+            "uri",
+            "url"
+        ]
+    },
+    {
         "name": "symfony/http-foundation",
         "version": "2.4.x-dev",
         "version_normalized": "2.4.9999999.9999999-dev",
@@ -7,18 +75,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/HttpFoundation.git",
-            "reference": "381245ba3e507a3e9c5b4c2cbf344a312fb6081d"
+            "reference": "979b5cf2bdf1f5785a8faa30e2cea97044b31c4d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/381245ba3e507a3e9c5b4c2cbf344a312fb6081d",
-            "reference": "381245ba3e507a3e9c5b4c2cbf344a312fb6081d",
+            "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/979b5cf2bdf1f5785a8faa30e2cea97044b31c4d",
+            "reference": "979b5cf2bdf1f5785a8faa30e2cea97044b31c4d",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2013-11-28 10:27:26",
+        "time": "2013-12-31 13:43:26",
         "type": "library",
         "extra": {
             "branch-alias": {
