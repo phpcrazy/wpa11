@@ -13,14 +13,27 @@ use Symfony\Component\Routing\Matcher\UrlMatcher;
 
 $request = Request::createFromGlobals();
 
+// Route rules
 $routes = new RouteCollection();
-$routes->add('hello', new Route('/hello/{name}', array('name' => 'World')));
-$routes->add('bye', new Route('/bye'));
-$routes->add('test', new Route('/test/{name}', array('name' => 'Thiha')));
+$routes->add('hello', 
+	new Route('/hello/{name}', 
+	array('name' => 'World'))
+);
+$routes->add('bye', 
+	new Route('/bye'));
+$routes->add('test', 
+	new Route('/test/{name}', 
+	array('name' => 'Thiha'))
+);
 
+// request extraction
 $context = new RequestContext();
 $context->fromRequest($request);
+
+// Request Matching
 $matcher = new UrlMatcher($routes, $context);
+
+// Route Manipulation  
 try {
 	$result = $matcher->match($request->getPathInfo());
 	ob_start();
@@ -34,8 +47,10 @@ try {
 }
 $response->send();
 
-function hello($name) {
-	echo "Hello " . $name;
+class hello {
+	public function test() {
+		echo "Hello World!";
+	}
 }
 
 ?>
