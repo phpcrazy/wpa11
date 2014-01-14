@@ -1,5 +1,12 @@
 <?php 
 
+function dump($data, $die = false) {
+	var_dump($data);
+	if($die == true) {
+		die();
+	}
+}
+
 function arrayResolver($key, $default_array) {
 	$key = explode('.', $key);
 	foreach ($key as $k => $val) {		
