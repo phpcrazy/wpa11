@@ -1,7 +1,6 @@
 <?php 
 
 class HomeController {
-
 	public function actionHome() {
 		return View::make('home');
 	}

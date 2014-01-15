@@ -5,6 +5,9 @@
 		"symfony/routing": "2.5.*@dev"
 		},
 	"autoload": {
+		"psr-0": {
+			"Wpa11\\": "src/src/"
+			},
 		"classmap": [
 			"src/loaders",
 			"app/controllers",

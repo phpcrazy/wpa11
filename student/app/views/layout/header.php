@@ -23,6 +23,8 @@
 							<li><a href="<?php echo base_url(); ?>/all-students">All Students</a></li>
 							<li><a href="<?php echo base_url(); ?>/php-foundation">PHP Foundation</a></li>
 							<li><a href="<?php echo base_url(); ?>/php-advanced">PHP Advanced</a></li>
+							<li><a href="<?php echo base_url(); ?>/web-professional-advanced">WPA</a></li>
+
 						</ul>
 					</div>
 				</div>
