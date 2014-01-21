@@ -1,35 +1,74 @@
 <?php 
 
 class Student {
-	public static function all() {
-		return static::dataCombine();
+
+	private static function getConn() {
+		try {
+			$conn = new PDO('mysql:host=' 
+			. Config::database('mysql.hostname')
+			. ';dbname=' . Config::database('mysql.dbname'), 
+			Config::database('mysql.username'), 
+			Config::database('mysql.password'));	
+		} catch (PDOException $e) {
+			trigger_error('Something wrong with database connection!', 
+			E_USER_ERROR);
+		}
+		return $conn;
 	}
 
-	private static function dataCombine() {
-		$students_mla = require DD . '/app/data/students_mla.php';
-		$students_mlh = require DD . '/app/data/students_mlh.php';
-		return array_merge($students_mla, $students_mlh);
+	private static function getData() {
+		$sql = "SELECT students.id, 
+			students.name, 
+			students.address, 
+			classes.name AS class_name
+			FROM students, classes
+			WHERE students.class_id = classes.id";
+		$conn = static::getConn();
+		$stmt = $conn->query($sql);
+		$students = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$stmt->closeCursor();
+		return $students;		
+	}
+
+	public static function getInterests($student_id, $interest_type) {
+		$sql = "SELECT interests.name
+			FROM students_interests, interests
+			WHERE students_interests.interest_id = interests.id
+			AND students_interests.student_id = :student_id 
+			AND interests.type = :interest_type";
+		$conn = static::getConn();
+		$stmt = $conn->prepare($sql);
+		$stmt->execute(array(
+			'student_id' => $student_id, 
+			'interest_type' => $interest_type));
+		$interests = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$stmt->closeCursor();
+		return $interests;
+	}
+
+	public static function all() {
+		return static::getData();
 	}
 
 	public static function get($id) {
-		$students = static::dataCombine();
+		$students = static::getData();
 		$result = array();
 		foreach($students as $student) {
- 			if($student['id'] == $id) {
- 				$result = $student;
-		 	}
- 		}
- 		if(count($result) < 1) {
+			if($student['id'] == $id) {
+				$result = $student;
+			}
+		}
+		if(count($result) < 1) {
 			return null; 			
- 		} 
- 		return $result;
+		} 
+		return $result;
 	}
 
 	public static function getClass($page){
-		$students = static::dataCombine();
+		$students = static::getData();
 		$result = array();
 		foreach($students as $student){
-			if($student['class']==$page){
+			if($student['class_name']==$page){
 				$result[]=$student;
 			}
 		}
@@ -37,4 +76,4 @@ class Student {
 	}
 }
 
- ?>
+?>

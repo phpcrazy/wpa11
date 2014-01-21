@@ -5,6 +5,13 @@ class Config {
 		$data = arrayResolver($key, $config);
 		return $data;
 	}
+
+	public static function database($key) {
+		$config = require DD . "/app/config/database.php";
+		$data = arrayResolver($key, $config);
+		return $data;
+	}
+
 }
 
 ?>
