@@ -9,6 +9,7 @@ class HomeController {
 		$data['students'] = Student::get($id);
 		$data['scripts'] = Student::getInterests($id, 'script');
 		$data['languages'] = Student::getInterests($id, 'language');
+		$data['experiences'] = Student::getExperiences($id);
 		return View::make('detail', $data);
 	}
 

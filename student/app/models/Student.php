@@ -46,6 +46,23 @@ class Student {
 		return $interests;
 	}
 
+public static function getExperiences($id) {
+		$sql = "SELECT 
+			experiences.id, 
+			experiences.name, 
+			experiences.from, 
+			experiences.to
+			FROM experiences
+			WHERE experiences.student_id = :student_id";
+
+		$conn = static::getConn();
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(':student_id', $id);
+		$stmt->execute();
+		$experiences = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $experiences;
+	}
+
 	public static function all() {
 		return static::getData();
 	}
