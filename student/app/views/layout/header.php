@@ -9,9 +9,17 @@
 <body>
 	<div class="container">
 		<div id="header" class="row">
-			<div class="span12">
-				<h1><?php echo site_title(); ?></h1>
-			</div>
+			<div class="span5">
+  				<h3><?php echo site_title(); ?></h3>
+  			</div>
+  			<div id="search_box" class="span7">
+  				<form id="search-form" 
+  				class="form-search" method="get" 
+  				action="<?php echo base_url(); ?>/index.php">
+  					<input type="text" class="input-medium search-query" name="q">
+  					<button type="submit" class="btn">Search</button>
+  				</form>
+  			</div>
 		</div> <!-- end of header -->
 		<div id="menu" class="row">
 			<div class="span12">

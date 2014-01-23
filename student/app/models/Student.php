@@ -46,6 +46,26 @@ class Student {
 		return $interests;
 	}
 
+	public static function search($q) {
+		$sql = "SELECT students.id, 
+			students.name, 
+			students.address, 
+			classes.name AS class_name
+			FROM students, classes
+			WHERE students.class_id = classes.id AND 
+			(students.name LIKE :search_word OR
+			classes.name LIKE :search_word OR
+			students.address LIKE :search_word)
+			GROUP BY students.id";
+
+		$conn = static::getConn();
+		$stmt = $conn->prepare($sql);
+		$stmt->bindValue(':search_word', '%' . $q . '%' );
+		$stmt->execute();
+		$students = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $students;
+	}
+
 public static function getExperiences($id) {
 		$sql = "SELECT 
 			experiences.id, 

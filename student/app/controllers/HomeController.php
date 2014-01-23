@@ -1,8 +1,16 @@
 <?php 
+use Symfony\Component\HttpFoundation\Request;
 
 class HomeController {
 	public function actionHome() {
-		return View::make('home');
+		$request = Request::createFromGlobals();
+		if(!$request->query->get('q')) {
+			return View::make('home');
+		} else {
+			$q = htmlspecialchars($request->query->get('q'));
+			$data['students'] = Student::search($q);
+			return View::make('all-students', $data);
+		}
 	}
 
 	public function detailStudent($id) {

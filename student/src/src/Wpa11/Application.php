@@ -9,7 +9,7 @@ use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\HttpKernel\Controller\ControllerResolver;
 
 class Application {
-	private $request;
+	public $request;
 	private $routes;
 	private $context;
 	private $matcher;
