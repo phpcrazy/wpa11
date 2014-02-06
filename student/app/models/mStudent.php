@@ -2,6 +2,22 @@
 
 class mStudent {
 
+	public static function insertData() {
+		$dbloader = new DatabaseLoader();
+		$conn = $dbloader->loadDatabase();
+		$db = $conn->StudentInfo;
+		$collection = $db->students;
+		$data = require DD . '/app/data/student_mla.php';
+		foreach($data as $student) {
+			$collection->insert($student);
+		}
+		$newdata = require DD . "/app/data/student_mlh.php";
+		foreach($newdata as $student) {
+			$collection->insert($student);
+		}
+
+	}
+
 	public static function getData() {
 		// $dbloader = new DatabaseLoader();
 		// $conn = $dbloader->loadDatabase();
