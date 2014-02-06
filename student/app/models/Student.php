@@ -20,9 +20,13 @@ class Student {
 		$sql = "SELECT students.id, 
 			students.name, 
 			students.address, 
-			classes.name AS class_name
-			FROM students, classes
-			WHERE students.class_id = classes.id";
+			stuclasses.class_name AS class_name
+			FROM students, (
+				SELECT classes.name AS class_name, 
+				students_classes.student_id 
+				FROM students_classes, classes 
+				WHERE students_classes.class_id = classes.id) AS stuclasses
+			WHERE students.id = stuclasses.student_id";
 		$conn = static::getConn();
 		$stmt = $conn->query($sql);
 		$students = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -27,11 +27,11 @@
 					<div class="navbar-inner">
 						<a class="brand" href="#">SIS</a>
 						<ul class="nav">
-							<li><a href="<?php echo base_url(); ?>">Home</a></li>
-							<li><a href="<?php echo base_url(); ?>/all-students">All Students</a></li>
-							<li><a href="<?php echo base_url(); ?>/php-foundation">PHP Foundation</a></li>
-							<li><a href="<?php echo base_url(); ?>/php-advanced">PHP Advanced</a></li>
-							<li><a href="<?php echo base_url(); ?>/web-professional-advanced">WPA</a></li>
+							<li><a href="<?php echo base_url(); ?>/mongo">Home</a></li>
+							<li><a href="<?php echo base_url(); ?>/mongo/all-students">All Students</a></li>
+							<li><a href="<?php echo base_url(); ?>/mongo/php-foundation">PHP Foundation</a></li>
+							<li><a href="<?php echo base_url(); ?>/mongo/php-advanced">PHP Advanced</a></li>
+							<li><a href="<?php echo base_url(); ?>/mongo/web-professional-advanced">WPA</a></li>
 
 						</ul>
 					</div>

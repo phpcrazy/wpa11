@@ -47,5 +47,40 @@ $routes->add('wpa',
 	)
 );
 
+$routes->add('mongo', 
+	new Route('/mongo', array(
+		'_controller' => 'MongoController::actionIndex'
+		)
+	)
+);
+
+$routes->add('mongo-allstudents',
+	new Route('/mongo/all-students', array(
+		'_controller'	=> 'MongoController::allstudents'
+		)
+	)
+);
+
+$routes->add('mongo-php-advanced', 
+	new Route('/mongo/php-advanced', array(
+		'_controller'	=> 'MongoController::phpAdvanced'
+		)
+	)
+);
+
+$routes->add('mongo-php-foundation',
+	new Route('/mongo/php-foundation', array(
+		'_controller' => 'MongoController::phpFoundation'
+		)
+	)
+);
+
+$routes->add('mongo-details', 
+	new Route('/mongo/detail/{id}', array(
+		'_controller' => 'MongoController::detail'
+		)
+	)
+);
+
 return $routes;
  ?>

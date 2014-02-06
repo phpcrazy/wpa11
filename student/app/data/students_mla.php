@@ -2,7 +2,6 @@
 
 return array(
     array(
-        'id'        => 1,
         'name'        => 'Aung Aung',
         'address'    => 'Bldg. (1), Room (8), Botataung Pagoda Road, Pazuntaung, Yangon',
         'class'     => 'PHP Foundation',
@@ -28,7 +27,6 @@ return array(
             ),
         ),
     array(
-        'id'        => 2,
         'name'        => 'Baung Baung',
         'address'    => 'Room (124), Bayint Naung',
         'class'     => 'PHP Advanced',

@@ -5,7 +5,7 @@
 			<table class="table table-striped">
 				<tr>
 					<td>ID#</td>
-					<td><?php echo $students['id']; ?></td>
+					<td><?php echo $students['_id']; ?></td>
 				</tr>
 				<tr>
 					<td>Name</td>
@@ -17,21 +17,21 @@
 				</tr>
 				<tr>
 					<td>Class</td>
-					<td><?php echo $students['class_name']; ?></td>
+					<td><?php echo $students['class']; ?></td>
 				</tr>
 				<tr>
 					<td>Interest - Script</td>
 					<td>
-						<?php foreach($scripts as $script) : ?>
-							<?php echo $script['name'] . ', '; ?>
+						<?php foreach($students['interest']['script'] as $script) : ?>
+							<?php echo $script . ', '; ?>
 						<?php endforeach; ?>
 					</td>
 				</tr>
 				<tr>
 					<td>Interest - Language</td>
 					<td>
-						<?php foreach($languages as $language) : ?>
-							<?php echo $language['name'] . ', '; ?>
+						<?php foreach($students['interest']['language'] as $language) : ?>
+							<?php echo $language . ', '; ?>
 						<?php endforeach; ?>
 					</td>
 				</tr>
@@ -47,13 +47,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach($experiences as $experience) : ?>
+					<?php foreach($students['experience'] as $experience) : ?>
 						<?php $i = 1; ?>
 						<tr>
 							<td><?php echo $i; ?></td>
-							<td><?php echo $experience['name']; ?></td>
-							<td><?php echo $experience['from']; ?></td>
-							<td><?php echo $experience['to']; ?></td>
+							<td><?php echo $experience['place']; ?></td>
+							<td><?php echo $experience['duration']['start']; ?></td>
+							<td><?php echo $experience['duration']['end']; ?></td>
 						</tr>
 						<?php $i++; ?>
 					<?php endforeach; ?>

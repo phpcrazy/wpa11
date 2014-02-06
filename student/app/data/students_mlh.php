@@ -2,7 +2,6 @@
 
 return array(
     array(
-        'id'        => 4,
         'name'        => 'Hla Hla',
         'address'    => 'Aung Thamardi Road, Hlaing',
         'class'     => 'PHP Foundation',
@@ -28,7 +27,6 @@ return array(
             ),
         ),
     array(
-        'id'        => 5,
         'name'        => 'Goo Goo',
         'address'    => 'Room (1), Daw Hla Pann Road',
         'class'     => 'PHP Advanced',
@@ -54,7 +52,6 @@ return array(
             ),
         ),
     array(
-        'id'        => 6,
         'name'        => 'Tin Maung Aye',
         'address'    => 'Room (78), Myae Ni Gone',
         'class'     => 'PHP Foundation',
